@@ -325,41 +325,6 @@ section{padding-block:clamp(64px,9vw,112px)}
 .road small{font:600 .68rem var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .road li.done small{color:var(--ok)}
 
-/* expert video */
-.expert{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:clamp(24px,4vw,48px);align-items:start}
-.expert.solo{grid-template-columns:minmax(0,980px)}
-.vframe{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#06122b;border:1px solid var(--line);box-shadow:var(--shadow)}
-.vframe video,.vframe iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
-.vph{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:.9rem;text-align:center;padding:1.5rem;color:#eaf1fb;background:
-  linear-gradient(180deg,rgba(6,18,43,.2),rgba(6,18,43,.92)),
-  radial-gradient(500px 240px at 50% 0%,#1d4388,transparent 70%),#06122b}
-.vph .play{width:76px;height:76px;border-radius:50%;background:var(--accent);display:grid;place-items:center;color:#0a1f44}
-.vph .play svg{width:30px;height:30px;margin-left:4px}
-.vph h3{color:#fff}
-.vph p{color:#b9c9e6;font-size:.92rem;max-width:44ch}
-.vph code{font:500 .85rem var(--font-mono);background:rgba(255,255,255,.1);border:1px dashed rgba(255,255,255,.4);padding:.3rem .6rem;border-radius:6px;color:#ffd866;word-break:break-all}
-.ex-side{display:grid;gap:1.2rem}
-.ex-side h3{font-size:1.15rem}
-.ex-side ul{margin:.4rem 0 0;padding-left:1.1rem;color:var(--muted)}
-.ex-side li+li{margin-top:.4rem}
-.ex-who{padding:1.1rem 1.2rem;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
-.ex-who b{display:block;font-family:var(--font-display);font-size:1.2rem}
-.ex-who span{color:var(--muted);font-size:.92rem}
-
-/* gallery */
-.gal{columns:3;column-gap:1.1rem}
-.gal figure{margin:0 0 1.1rem;break-inside:avoid}
-.gal button{display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface);cursor:zoom-in;box-shadow:var(--shadow)}
-.gal img{width:100%;transition:transform .35s}
-.gal button:hover img{transform:scale(1.03)}
-.gal figcaption{font-size:.88rem;color:var(--muted);padding:.5rem .2rem 0}
-.gal figcaption b{color:var(--ink);font-weight:600}
-dialog.lb{border:0;padding:0;background:transparent;max-width:min(96vw,1400px);max-height:94vh;width:auto;overflow:visible}
-dialog.lb::backdrop{background:rgba(4,10,24,.88)}
-.lb img{max-height:88vh;width:auto;max-width:100%;border-radius:10px;margin:0 auto}
-.lb p{color:#dbe6fa;text-align:center;margin-top:.6rem;font-size:.92rem}
-.lb .x{position:absolute;top:-14px;right:-6px;width:40px;height:40px;border-radius:50%;border:0;background:var(--accent);color:#0a1f44;font:700 1.3rem var(--font-body);cursor:pointer}
-
 /* team */
 .team{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(24px,5vw,64px);align-items:center}
 .card-c{border:1px solid var(--line);border-radius:18px;padding:1.6rem;background:var(--bg);display:grid;gap:.8rem}
@@ -372,7 +337,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 
 /* responsive */
 @media (max-width:980px){
-  .hero-grid,.case,.sim,.bm-top,.expert,.team,.cs-slide{grid-template-columns:minmax(0,1fr)}
+  .hero-grid,.case,.sim,.bm-top,.team,.cs-slide{grid-template-columns:minmax(0,1fr)}
   .cs-vis{max-width:340px}
   .units,.feat,.rev{grid-template-columns:minmax(0,1fr)}
   .seg,.benefits{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -435,8 +400,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       <a href="#dashboard">History</a>
       <a href="#hardware">Hardware</a>
       <a href="#business">Business</a>
-      <a href="#expert">Expert meet</a>
-      <a href="#gallery">Gallery</a>
       <a href="#team">Contact</a>
     </nav>
     <button class="theme-btn" id="themeBtn" type="button" aria-label="Switch between light and dark theme"><svg aria-hidden="true"><use id="themeIcon" href="#i-moon"/></svg></button>
@@ -454,7 +417,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       <p class="lede">A.S.C.E.N.T. is a wearable safety system for mountain climbers. It tracks health and altitude, links climbing buddies on the trail, and tells base camp the moment something goes wrong.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#how">See how it works</a>
-        <a class="btn btn-ghost" href="#expert">Watch the expert meet</a>
       </div>
       <div class="hero-meta">
         <span>WSRO Entrepreneurship Competition</span>
@@ -769,43 +731,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   </div>
 </section>
 
-<!-- EXPERT MEET -->
-<section id="expert">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Expert meet</p>
-      <h2>What an expert told us about A.S.C.E.N.T.</h2>
-      <p class="lede" id="exLede">We presented the project to an expert and asked for honest feedback. Watch the conversation here.</p>
-    </div>
-    <div class="expert solo" id="expertGrid">
-      <div class="vframe" id="vframe">
-        <div class="vph" id="vph">
-          <div class="play"><svg aria-hidden="true"><use href="#i-play"/></svg></div>
-          <h3>Expert meet video coming soon</h3>
-          <p>To show your video, save it with this exact name and path inside the website folder, then refresh:</p>
-          <code>assets/video/expert-meet.mp4</code>
-        </div>
-      </div>
-      <div class="ex-side" id="exSide" hidden>
-        <div class="ex-who" id="exWho"></div>
-        <div id="exTake"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section class="alt" id="gallery">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow">Gallery</p>
-      <h2>Posters, brochures and the exhibition stall.</h2>
-      <p class="lede">Tap any image to view it full size.</p>
-    </div>
-    <div class="gal" id="gal"></div>
-  </div>
-</section>
-
 <!-- TEAM -->
 <section id="team">
   <div class="wrap team">
@@ -830,24 +755,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   <div class="wrap"><span>A.S.C.E.N.T. · Altitude Safety &amp; Climber Emergency Notification Technology</span><span>Student prototype · not a certified medical or emergency device</span></div>
 </footer>
 
-<dialog class="lb" id="lb" aria-label="Image viewer"><button class="x" type="button" id="lbX" aria-label="Close image">×</button><img id="lbImg" alt=""><p id="lbCap"></p></dialog>
 
 <script>
-/* ============ EDIT THIS BLOCK: expert meet video ============
-   1) Save your video as  assets/video/expert-meet.mp4  (H.264 MP4 works everywhere).
-   2) Optional thumbnail:  assets/video/expert-meet-poster.jpg
-   3) Or use YouTube: put the video ID in youtubeId (the part after v= in the link).
-   4) Fill in name/role/date/takeaways to show the side panel. Leave blank to hide it. */
-var EXPERT = {
-  video: "assets/video/expert-meet.mp4",
-  poster: "assets/video/expert-meet-poster.jpg",
-  youtubeId: "",
-  name: "",
-  role: "",
-  date: "",
-  takeaways: []   // e.g. ["Add a rugged case", "Test range above 5,000 m"]
-};
-
 (function(){
   var $ = function(s){ return document.querySelector(s); };
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -986,30 +895,6 @@ var EXPERT = {
   }
   renderList(); renderDetail();
 
-  /* expert video */
-  var vframe=$("#vframe"), vph=$("#vph");
-  function showVideoMeta(){
-    var any = EXPERT.name || EXPERT.role || (EXPERT.takeaways && EXPERT.takeaways.length);
-    if(!any) return;
-    $("#exSide").hidden=false; $("#expertGrid").classList.remove("solo");
-    var who=$("#exWho"); who.innerHTML="";
-    who.appendChild(el("b",null,EXPERT.name||"Our expert")); if(EXPERT.role) who.appendChild(el("span",null,EXPERT.role+(EXPERT.date?" · "+EXPERT.date:"")));
-    var tk=$("#exTake"); tk.innerHTML="";
-    if(EXPERT.takeaways && EXPERT.takeaways.length){ tk.appendChild(el("h3",null,"Key takeaways")); var u=el("ul"); EXPERT.takeaways.forEach(function(x){ u.appendChild(el("li",null,x)); }); tk.appendChild(u); }
-    else { $("#exWho").style.gridColumn="1"; }
-  }
-  if(EXPERT.youtubeId){
-    var f=document.createElement("iframe"); f.src="https://www.youtube-nocookie.com/embed/"+encodeURIComponent(EXPERT.youtubeId); f.title="Expert meet video";
-    f.allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen"; f.allowFullscreen=true; vframe.appendChild(f); vph.hidden=true; showVideoMeta();
-  } else if(EXPERT.video){
-    var vid=document.createElement("video"); vid.controls=true; vid.preload="metadata"; vid.playsInline=true; vid.hidden=true; vid.setAttribute("aria-label","Expert meet video");
-    if(EXPERT.poster) vid.poster=EXPERT.poster;
-    vid.addEventListener("loadedmetadata",function(){ vid.hidden=false; vph.hidden=true; showVideoMeta(); });
-    vid.addEventListener("error",function(){ vid.hidden=true; vph.hidden=false; });
-    vid.src=EXPERT.video; vframe.insertBefore(vid, vph);
-  }
-
-
   /* case study slider */
   var CASES = [
     {year:"1996", short:"1996 · Everest", poster:"assets/img/case-study-rob-hall.jpg", posterAlt:"A.S.C.E.N.T. case study poster about Rob Hall and the 1996 Mount Everest expedition",
@@ -1097,28 +982,6 @@ var EXPERT = {
   csTrack.addEventListener("keydown",function(e){ if(e.key==="ArrowRight"){ e.preventDefault(); csGo(csIdx+1); } else if(e.key==="ArrowLeft"){ e.preventDefault(); csGo(csIdx-1); } });
   window.addEventListener("resize",function(){ csTrack.scrollLeft=csIdx*csTrack.clientWidth; });
   csSync();
-
-  /* gallery + lightbox */
-  var G = [
-    ["poster-competition","International Student Innovation Competition poster","Competition poster",1024,1536],
-    ["brochure-architecture","Brochure: project overview, features, system architecture","Brochure · overview and architecture",1536,1024],
-    ["brochure-impact","Brochure: impact, opportunity, hardware and journey","Brochure · impact and startup journey",1536,1024],
-    ["exhibition-stall","Exhibition stall with roll-up banner, backdrop and demo units","Exhibition stall design",1672,941],
-    ["poster-acent-business","Business concept poster with market and business perspective","Business concept poster",887,1774],
-    ["watch-ui-reference","Smartwatch screen design reference","Watch screens · design reference, not device photos",1640,1120],
-    ["sticker-pack","A.S.C.E.N.T. takeaway sticker pack","Takeaway sticker pack",1536,1024],
-    ["feedback-mountain","Climb the Feedback Mountain visitor feedback board","Visitor feedback board",1536,1024],
-    ["case-study-rob-hall","Case study poster: Rob Hall, Everest 1996","Case study poster · Everest 1996",1055,1491]
-  ];
-  var gal=$("#gal"), lb=$("#lb"), lbImg=$("#lbImg"), lbCap=$("#lbCap");
-  G.forEach(function(g){
-    var fig=el("figure"), b=el("button"); b.type="button"; b.setAttribute("aria-label","Open: "+g[2]);
-    var im=document.createElement("img"); im.src="assets/img/"+g[0]+".jpg"; im.alt=g[1]; im.loading="lazy"; im.width=g[3]; im.height=g[4];
-    b.appendChild(im); fig.appendChild(b); var c=el("figcaption"); c.appendChild(el("b",null,g[2])); fig.appendChild(c); gal.appendChild(fig);
-    b.addEventListener("click",function(){ lbImg.src=im.src; lbImg.alt=g[1]; lbCap.textContent=g[2]; if(lb.showModal) lb.showModal(); else lb.setAttribute("open",""); });
-  });
-  $("#lbX").addEventListener("click",function(){ lb.close(); });
-  lb.addEventListener("click",function(e){ if(e.target===lb) lb.close(); });
 
   /* copy email */
   $("#copyMail").addEventListener("click",function(){
